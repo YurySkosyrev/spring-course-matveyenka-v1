@@ -1,14 +1,15 @@
 package com.spring;
 
 import com.spring.database.pool.ConnectionPool;
-import com.spring.database.repository.UserRepository;
-import com.spring.service.UserService;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ApplicationRunner {
     public static void main(String[] args) {
-        var connectionPool = new ConnectionPool();
-        var userRepository = new UserRepository(connectionPool);
-        var userService = new UserService(userRepository);
-        // TODO: 04.02.2023 UserService
+        var context = new ClassPathXmlApplicationContext("application.xml");
+
+        //System.out.println(context.getBean(ConnectionPool.class));
+
+        var connectionPool = context.getBean("pool1", ConnectionPool.class);
+        System.out.println(connectionPool);
     }
 }
