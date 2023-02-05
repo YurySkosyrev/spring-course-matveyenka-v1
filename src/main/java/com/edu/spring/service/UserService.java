@@ -1,7 +1,7 @@
-package com.spring.service;
+package com.edu.spring.service;
 
-import com.spring.database.repository.CompanyRepository;
-import com.spring.database.repository.UserRepository;
+import com.edu.spring.database.repository.UserRepository;
+import com.edu.spring.database.repository.CompanyRepository;
 
 public class UserService {
 
