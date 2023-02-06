@@ -13,6 +13,9 @@
 
     <context:property-placeholder location="classpath:application.properties"/>
 
+    <bean class="com.edu.spring.bfpp.LogBeanFactoryPostProcessor"></bean>
+    <bean class="com.edu.spring.bfpp.VerifyPropertyBeanFactoryPostProcessor"></bean>
+
     <bean id="driver" class="java.lang.String">
         <constructor-arg type="java.lang.String" value="${db.driver}"/>
     </bean>
