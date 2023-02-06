@@ -7,11 +7,15 @@
                             http://www.springframework.org/schema/context
                             http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
+
+    <context:annotation-config/>
+    <context:property-placeholder location="classpath:application.properties"/>
+
+<!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
+
     <!--    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">-->
     <!--        <property name="locations" value="classpath:application.properties"/>-->
     <!--    </bean>-->
-
-    <context:property-placeholder location="classpath:application.properties"/>
 
     <bean class="com.edu.spring.bfpp.LogBeanFactoryPostProcessor"></bean>
     <bean class="com.edu.spring.bfpp.VerifyPropertyBeanFactoryPostProcessor"></bean>
@@ -20,9 +24,7 @@
         <constructor-arg type="java.lang.String" value="${db.driver}"/>
     </bean>
 
-    <bean id="pool1" name="p1,p2,p3" class="com.edu.spring.database.pool.ConnectionPool"
-          init-method="init"
-          destroy-method="destroy">
+    <bean id="pool1" name="p1,p2,p3" class="com.edu.spring.database.pool.ConnectionPool">
         <constructor-arg name="username" type="java.lang.String" value="${db.username}"/>
         <constructor-arg name="properties">
             <null/>
