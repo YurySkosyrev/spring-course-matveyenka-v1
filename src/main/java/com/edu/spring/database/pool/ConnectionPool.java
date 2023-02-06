@@ -23,10 +23,12 @@ public class ConnectionPool implements InitializingBean {
     }
 
     public void setProperties(Map<String, Object> properties) {
+
         this.properties = properties;
     }
 
     private void init() {
+
         System.out.println("Init connection pool");
     }
 
@@ -36,6 +38,7 @@ public class ConnectionPool implements InitializingBean {
     }
 
     private void destroy() {
+
         System.out.println("Clean connection pool");
     }
 }
