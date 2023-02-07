@@ -12,6 +12,8 @@
     <context:property-placeholder location="classpath:application.properties"/>
 
     <bean class="com.edu.spring.bpp.InjectBeanPostProcessor"/>
+    <bean class="com.edu.spring.bpp.TransactionBeanPostProcessor"/>
+    <bean class="com.edu.spring.bpp.AuditingBeanPostProcessor"/>
 
 <!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
 
@@ -19,8 +21,8 @@
     <!--        <property name="locations" value="classpath:application.properties"/>-->
     <!--    </bean>-->
 
-    <bean class="com.edu.spring.bfpp.LogBeanFactoryPostProcessor"></bean>
-    <bean class="com.edu.spring.bfpp.VerifyPropertyBeanFactoryPostProcessor"></bean>
+    <bean class="com.edu.spring.bfpp.LogBeanFactoryPostProcessor"/>
+    <bean class="com.edu.spring.bfpp.VerifyPropertyBeanFactoryPostProcessor"/>
 
     <bean id="driver" class="java.lang.String">
         <constructor-arg type="java.lang.String" value="${db.driver}"/>
