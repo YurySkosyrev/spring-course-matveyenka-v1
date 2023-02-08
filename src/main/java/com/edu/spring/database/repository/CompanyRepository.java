@@ -18,7 +18,7 @@ import java.util.Optional;
 
 @Auditing
 @Transaction
-@Repository
+//@Repository
 public class CompanyRepository implements CrudRepository<Integer, Company>{
 
 
