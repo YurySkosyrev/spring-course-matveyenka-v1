@@ -1,22 +1,19 @@
 package com.edu.spring.database.repository;
 
 import com.edu.spring.bpp.Auditing;
-import com.edu.spring.bpp.InjectBean;
 import com.edu.spring.bpp.Transaction;
 import com.edu.spring.database.entity.Company;
 import com.edu.spring.database.pool.ConnectionPool;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
-import java.lang.annotation.Retention;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Auditing
 @Transaction
 @Repository
@@ -31,12 +28,12 @@ public class CompanyRepository implements CrudRepository<Integer, Company>{
 
     @PostConstruct
     private void init() {
-        System.out.println("init company repository");
+        log.info("init company repository");
     }
 
     @Override
     public Optional<Company> findById(Integer id) {
-        System.out.println("FindById method...");
+        log.info("FindById method...");
         return Optional.of(new Company(id));
     }
 

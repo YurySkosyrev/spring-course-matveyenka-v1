@@ -19,3 +19,9 @@ db:
     - size: 3
       timeout: 3
 
+logging:
+  level:
+    root: WARN
+    com.edu.spring.database.pool.ConnectionPool: INFO
+
+
