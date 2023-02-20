@@ -23,5 +23,8 @@ logging:
   level:
     root: WARN
     com.edu.spring.database.pool.ConnectionPool: INFO
+  file:
+    name: dmdev.log
+    path: /
 
 
