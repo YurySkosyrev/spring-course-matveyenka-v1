@@ -23,7 +23,8 @@ public record DataBaseProperties(String username,
 
     //    @Data
     //    @NoArgsConstructor
-    public static record PoolProperties(Integer size,
-                                 Integer timeout) {
+    public static record PoolProperties(
+            Integer size,
+            Integer timeout) {
     }
 }
