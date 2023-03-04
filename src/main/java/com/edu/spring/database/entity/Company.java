@@ -5,7 +5,16 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapKeyColumn;
+import javax.persistence.Table;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,3 +40,4 @@ public class Company implements BaseEntity<Integer> {
     @Column(name = "description")
     private Map<String, String> locales = new HashMap<>();
 }
+
